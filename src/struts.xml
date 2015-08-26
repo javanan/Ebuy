@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE struts PUBLIC  
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"  
+    "http://struts.apache.org/dtds/struts-2.3.dtd">  
+      
+<struts>  
+    <constant name="struts.i18n.encoding" value="UTF-8" />  
+    <constant name="struts.action.extension" value="action" />  
+
+
+	<package name="ebuy" namespace="/" extends="struts-default">  
+        <action name="product_*" class="com.java1234.action.ProductAction" method="{1}">
+        	<result name="success">productMain.jsp</result>
+        </action>
+        
+        <action name="news_*" class="com.java1234.action.NewsAction" method="{1}">
+        	<result name="success">newsMain.jsp</result>
+        </action>
+        
+        <action name="notice_*" class="com.java1234.action.NoticeAction" method="{1}">
+        	<result name="success">noticeMain.jsp</result>
+        </action>
+        
+        <action name="user_*" class="com.java1234.action.UserAction" method="{1}">
+        	<result name="register_success">reg-result.jsp</result>
+        	<result name="error">login.jsp</result>
+        	<result name="login">index.jsp</result>
+        	<result name="logout" type="redirect">index.jsp</result>
+        	<result name="logout2" type="redirect">admin/login.jsp</result>
+        	<result name="userCenter">userCenter.jsp</result>
+        	<result name="adminError">admin/login.jsp</result>
+        	<result name="adminLogin" type="redirect">admin/main.jsp</result>
+        </action>
+        
+        <action name="comment_*" class="com.java1234.action.CommentAction" method="{1}">
+        	<result name="success">comment.jsp</result>
+        	<result name="save" type="redirectAction">comment_list.action</result>
+        </action>
+        
+        <action name="shopping_*" class="com.java1234.action.ShoppingAction" method="{1}">
+        	<result name="success">shoppingMain.jsp</result>
+        	<result name="list" type="redirectAction">shopping_list.action</result>
+        </action>
+        
+        <action name="order_*" class="com.java1234.action.OrderAction" method="{1}">
+        	<result name="success">shoppingMain.jsp</result>
+        	<result name="orderList">userCenter.jsp</result>
+        </action>
+        
+        <action name="productBigType_*" class="com.java1234.action.ProductBigTypeAction" method="{1}">
+        </action>
+        
+        <action name="productSmallType_*" class="com.java1234.action.ProductSmallTypeAction" method="{1}">
+        </action>
+        
+        <action name="tag_*" class="com.java1234.action.TagAction" method="{1}">
+        </action>
+        
+        <action name="sys_*" class="com.java1234.action.SysAction" method="{1}">
+        </action>
+    </package>  
+</struts>   
